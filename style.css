@@ -1,0 +1,161 @@
+:root {
+    --purple-50: hsl(260, 100%, 95%);
+    --purple-300: hsl(264, 82%, 80%);
+    --purple-500: hsl(263, 55%, 52%);
+
+    --white: hsl(0, 0%, 100%);
+    --grey-100: hsl(214, 17%, 92%);
+    --grey-200: hsl(0, 0%, 81%);
+    --grey-400: hsl(224, 10%, 45%);
+    --grey-500: hsl(217, 19%, 35%);
+    --dark-blue: hsl(219, 29%, 14%);
+    --black: hsl(0, 0%, 7%);
+
+    --font-main: 'Barlow Semi Condensed', sans-serif;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fs-body: 0.8125rem;
+
+    --shadow: 40px 40px 50px 40px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font-main);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;    
+    padding: 40px 20px;
+
+}
+
+
+.card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+.card-purple {
+    background-color: var(--purple-500);
+    background-image: url('./images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top 0 right 8%;
+    color: var(--white);   
+    grid-column: span 2;
+}
+.card-purple header img {
+    border: 2px solid var(--purple-300);
+}
+.card-gray {
+    background-color: var(--grey-500);
+    color: var(--grey-100);
+    grid-column: 3;
+}
+
+.card-white {
+    background-color: var(--white);
+    color: var(--grey-500);
+    grid-column: 1;
+}
+
+.card-dark {
+    background-color: var(--dark-blue);
+    color: var(--grey-100);
+    grid-column: 2 /span 2;
+    
+}
+
+.card-dark header img {
+    border: 2px solid var(--purple-300);
+}
+
+.card-white-tall {
+    background-color: var(--white);
+    color: var(--grey-500);
+    grid-column: 4;
+    grid-row: 1 / span 2;
+}
+
+.card img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+.card header{
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    padding-bottom: 0.8rem;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-weight: var(--fw-semibold);
+    padding-bottom: 1rem;
+}
+header h2 {
+    font-size: 0.9rem;
+    font-weight: var(--fw-semibold);
+    line-height: 1;
+}
+header p {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-top: 0.2rem;
+}
+
+.card > p {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+.grid-container{
+    display: grid;  
+    grid-template-columns: repeat(4, 1fr);   
+    gap: 24px;
+    max-width: 1110px;
+    margin: 40px auto;
+}
+
+
+.attribution {
+    font-size: 0.6875rem;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+.attribution a:focus {
+    outline: 2px dotted var(--purple-500);
+    outline-offset: 4px;
+}
+
+/* --- AJUSTE PARA MOBILE (Desktop-First usa max-width) --- */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        padding: 24px;
+  
+    }  
+    .card-purple,
+    .card-gray,
+    .card-white,
+    .card-dark,
+    .card-white-tall {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
